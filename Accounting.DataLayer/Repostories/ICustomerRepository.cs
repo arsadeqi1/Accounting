@@ -9,7 +9,8 @@ namespace Accounting.DataLayer.Repostories
     public interface ICustomerRepository
     {
         List<Customers> GetAllCustomers();
-        List<Customers> GetCustomerById(int customer);
+        Customers GetCustomerById(int customerId);
+
         bool InsertCustomer(Customers customer);
         bool UpdateCustomer(Customers customer);
         bool DeleteCustomer(Customers customer);
