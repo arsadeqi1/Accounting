@@ -68,6 +68,7 @@
             this.btnAddCustomer.Size = new System.Drawing.Size(70, 59);
             this.btnAddCustomer.Text = "شخص جدید";
             this.btnAddCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // btnEditCustomer
             // 
@@ -78,6 +79,7 @@
             this.btnEditCustomer.Size = new System.Drawing.Size(88, 59);
             this.btnEditCustomer.Text = "ویرایش مخاطب";
             this.btnEditCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // btnDeleteCustomer
             // 

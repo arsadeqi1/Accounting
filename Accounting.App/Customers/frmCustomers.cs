@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Accounting.App.Customers;
 
 namespace Accounting.App.Customers
 {
@@ -64,6 +65,33 @@ namespace Accounting.App.Customers
             else
             {
                 RtlMessageBox.Show("Please Select a Row", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            frmAddOrEdit frmAdd = new frmAddOrEdit();
+            if(frmAdd.ShowDialog() == DialogResult.OK)
+            {
+                BindGrid();
+            }
+        }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            if(dgvCustomers.CurrentRow != null)
+            {
+                int customerId = int.Parse(dgvCustomers.CurrentRow.Cells[0].Value.ToString());
+                frmAddOrEdit frmAddOrEdit = new frmAddOrEdit();
+                frmAddOrEdit.customerID = customerId;
+                if(frmAddOrEdit.ShowDialog() == DialogResult.OK)
+                {
+                    BindGrid();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Select a Row!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
