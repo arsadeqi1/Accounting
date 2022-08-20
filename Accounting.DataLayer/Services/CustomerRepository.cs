@@ -48,6 +48,11 @@ namespace Accounting.DataLayer.Services
             return db.Customers.ToList();
         }
 
+        public IEnumerable<Customers> GetCustomerByFilter(string parameter)
+        {
+            return db.Customers.Where(f => f.FullName.Contains(parameter) || f.Email.Contains(parameter) || f.Mobile.Contains(parameter)).ToList();
+        }
+
         public Customers GetCustomerById(int customerId)
         {
             return db.Customers.Find(customerId);
@@ -64,11 +69,6 @@ namespace Accounting.DataLayer.Services
             {
                 return false;
             }
-        }
-
-        public void Save()
-        {
-            db.SaveChanges();
         }
 
         public bool UpdateCustomer(Customers customer)

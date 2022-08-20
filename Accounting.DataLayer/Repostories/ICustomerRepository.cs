@@ -10,11 +10,11 @@ namespace Accounting.DataLayer.Repostories
     {
         List<Customers> GetAllCustomers();
         Customers GetCustomerById(int customerId);
+        IEnumerable<Customers> GetCustomerByFilter(string parameter);
 
         bool InsertCustomer(Customers customer);
         bool UpdateCustomer(Customers customer);
         bool DeleteCustomer(Customers customer);
         bool DeleteCustomer(int customerId);
-        void Save();
     }
 }

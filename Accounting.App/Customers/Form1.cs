@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Accounting.App.Customers;
 
 namespace Accounting.App
 {
@@ -15,6 +16,12 @@ namespace Accounting.App
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            frmCustomers frmCustomers = new frmCustomers();
+            frmCustomers.ShowDialog();
         }
     }
 }

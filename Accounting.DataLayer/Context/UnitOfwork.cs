@@ -23,6 +23,11 @@ namespace Accounting.DataLayer.Context
                 return _customerRepository;
             }
         }
+        
+        public void Save()
+        {
+            db.SaveChanges();
+        }
 
         public void Dispose()
         {
