@@ -11,19 +11,33 @@ namespace Accounting.DataLayer.Context
     public class UnitOfwork : IDisposable
     {
         Accounting_DBEntities db = new Accounting_DBEntities();
+
         private ICustomerRepository _customerRepository;
         public ICustomerRepository CustomerRepository
         {
             get
             {
-                if(_customerRepository == null)
+                if (_customerRepository == null)
                 {
                     _customerRepository = new CustomerRepository(db);
                 }
                 return _customerRepository;
             }
         }
-        
+
+        private GenericRepository<Accounting> _accountingRepository;
+        GenericRepository<Accounting> AccountingRepository
+        {
+            get
+            {
+                if (_accountingRepository == null)
+                {
+                    _accountingRepository = new GenericRepository<Accounting>(db);
+                }
+                return _accountingRepository;
+            }
+        }
+
         public void Save()
         {
             db.SaveChanges();

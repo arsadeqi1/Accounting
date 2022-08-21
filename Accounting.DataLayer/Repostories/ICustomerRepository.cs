@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accounting.ViewModel.Customers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace Accounting.DataLayer.Repostories
         List<Customers> GetAllCustomers();
         Customers GetCustomerById(int customerId);
         IEnumerable<Customers> GetCustomerByFilter(string parameter);
+        List<ListCustomerViewModel> GetNameCustomers(string filter = "");
 
         bool InsertCustomer(Customers customer);
         bool UpdateCustomer(Customers customer);

@@ -54,10 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customers\Form1.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customers\Form1.Designer.cs">
+    <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Customers\frmAddOrEdit.cs">
@@ -71,6 +71,12 @@
     </Compile>
     <Compile Include="Customers\frmCustomers.Designer.cs">
       <DependentUpon>frmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewAccounting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewAccounting.Designer.cs">
+      <DependentUpon>frmNewAccounting.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,7 +110,7 @@
     <Compile Include="Validator\RequiredFieldValidator.designer.cs">
       <DependentUpon>RequiredFieldValidator.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Customers\Form1.resx">
+    <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmAddOrEdit.resx">
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\frmCustomers.resx">
       <DependentUpon>frmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewAccounting.resx">
+      <DependentUpon>frmNewAccounting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -198,6 +207,10 @@
     <ProjectReference Include="..\Accounting.Utilties\Accounting.Utilties.csproj">
       <Project>{26bf084c-8ed2-4817-8cea-9b4b6519835d}</Project>
       <Name>Accounting.Utilties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accounting.ViewModel\Accounting.ViewModel.csproj">
+      <Project>{21098397-fb95-4c60-9e31-5f55a901a5dd}</Project>
+      <Name>Accounting.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

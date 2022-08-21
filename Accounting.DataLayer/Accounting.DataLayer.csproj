@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounting.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AccountingModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,6 +67,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingTypes.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Context\UnitOfwork.cs" />
     <Compile Include="Customers.cs">
@@ -101,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Accounting.ViewModel\Accounting.ViewModel.csproj">
+      <Project>{21098397-fb95-4c60-9e31-5f55a901a5dd}</Project>
+      <Name>Accounting.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
