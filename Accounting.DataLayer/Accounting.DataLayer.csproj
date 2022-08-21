@@ -72,6 +72,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repostories\ICustomerRepository.cs" />
     <Compile Include="Services\CustomerRepository.cs" />
+    <Compile Include="Services\GenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="AccountingModel.edmx">

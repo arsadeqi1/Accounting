@@ -50,7 +50,7 @@ namespace Accounting.DataLayer.Services
 
         public IEnumerable<Customers> GetCustomerByFilter(string parameter)
         {
-            return db.Customers.Where(f => f.FullName.Contains(parameter) || f.Email.Contains(parameter) || f.Mobile.Contains(parameter)).ToList();
+            return db.Customers.Where(f => f.FullName.Contains(parameter) || f.Email.Contains(parameter) || f.Mobile.Contains(parameter) || f.Address.Contains(parameter)).ToList();
         }
 
         public Customers GetCustomerById(int customerId)
