@@ -1,9 +1,5 @@
 ﻿using Accounting.ViewModel.Customers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Accounting.DataLayer.Repostories
 {
@@ -19,5 +15,6 @@ namespace Accounting.DataLayer.Repostories
         bool DeleteCustomer(Customers customer);
         bool DeleteCustomer(int customerId);
         int GetCustomerIdByName(string name);
+        string GetCustomerNameById(int customerId);
     }
 }
