@@ -28,23 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewAccounting));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvCustomers = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFilter = new System.Windows.Forms.TextBox();
-            this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rbReceive = new System.Windows.Forms.RadioButton();
             this.rbPay = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtAmount = new System.Windows.Forms.NumericUpDown();
+            this.rangeValidator1 = new ValidationComponents.RangeValidator(this.components);
+            this.requiredFieldValidator1 = new ValidationComponents.RequiredFieldValidator(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -59,23 +64,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اشخاص";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(166, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "جست و جو:";
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Location = new System.Drawing.Point(6, 19);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(160, 20);
-            this.txtFilter.TabIndex = 0;
-            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
-            // 
             // dgvCustomers
             // 
             this.dgvCustomers.AllowUserToAddRows = false;
@@ -89,6 +77,31 @@
             this.dgvCustomers.ReadOnly = true;
             this.dgvCustomers.Size = new System.Drawing.Size(215, 277);
             this.dgvCustomers.TabIndex = 2;
+            this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "FullName";
+            this.Column1.HeaderText = "نام شخص";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(166, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "جست و جو:";
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(10, 19);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(156, 20);
+            this.txtFilter.TabIndex = 0;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // txtName
             // 
@@ -147,13 +160,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "مبلغ : ";
             // 
-            // txtAmount
-            // 
-            this.txtAmount.Location = new System.Drawing.Point(267, 140);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(240, 20);
-            this.txtAmount.TabIndex = 6;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -179,24 +185,47 @@
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "ثبت";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // Column1
+            // txtAmount
             // 
-            this.Column1.DataPropertyName = "FullName";
-            this.Column1.HeaderText = "نام شخص";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.txtAmount.Location = new System.Drawing.Point(267, 141);
+            this.txtAmount.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(240, 20);
+            this.txtAmount.TabIndex = 11;
+            // 
+            // rangeValidator1
+            // 
+            this.rangeValidator1.CancelFocusChangeWhenInvalid = false;
+            this.rangeValidator1.ControlToValidate = this.txtAmount;
+            this.rangeValidator1.ErrorMessage = "Insert Amount Please";
+            this.rangeValidator1.Icon = ((System.Drawing.Icon)(resources.GetObject("rangeValidator1.Icon")));
+            this.rangeValidator1.MaximumValue = "9999999999";
+            this.rangeValidator1.MinimumValue = "1";
+            this.rangeValidator1.Type = ValidationComponents.ValidationDataType.Integer;
+            // 
+            // requiredFieldValidator1
+            // 
+            this.requiredFieldValidator1.CancelFocusChangeWhenInvalid = false;
+            this.requiredFieldValidator1.ControlToValidate = this.txtName;
+            this.requiredFieldValidator1.ErrorMessage = "Select Person from the List";
+            this.requiredFieldValidator1.Icon = ((System.Drawing.Icon)(resources.GetObject("requiredFieldValidator1.Icon")));
             // 
             // frmNewAccounting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.rbPay);
             this.Controls.Add(this.rbReceive);
             this.Controls.Add(this.label3);
@@ -211,6 +240,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,9 +259,11 @@
         private System.Windows.Forms.RadioButton rbReceive;
         private System.Windows.Forms.RadioButton rbPay;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.NumericUpDown txtAmount;
+        private ValidationComponents.RangeValidator rangeValidator1;
+        private ValidationComponents.RequiredFieldValidator requiredFieldValidator1;
     }
 }

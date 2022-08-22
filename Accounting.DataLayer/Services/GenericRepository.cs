@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Accounting.DataLayer.Services
 {
-    internal class GenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> where TEntity : class
     {
         private Accounting_DBEntities _db;
         private DbSet<TEntity> _dbSet;

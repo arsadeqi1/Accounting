@@ -18,5 +18,6 @@ namespace Accounting.DataLayer.Repostories
         bool UpdateCustomer(Customers customer);
         bool DeleteCustomer(Customers customer);
         bool DeleteCustomer(int customerId);
+        int GetCustomerIdByName(string name);
     }
 }
