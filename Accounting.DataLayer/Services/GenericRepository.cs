@@ -12,13 +12,11 @@ namespace Accounting.DataLayer.Services
     {
         private Accounting_DBEntities _db;
         private DbSet<TEntity> _dbSet;
-
         public GenericRepository(Accounting_DBEntities db)
         {
             _db = db;
             _dbSet = _db.Set<TEntity>();
         }
-
 
         public virtual void Insert(TEntity entity)
         {

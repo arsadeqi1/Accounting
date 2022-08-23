@@ -75,6 +75,7 @@
             this.btnAdd.Size = new System.Drawing.Size(47, 59);
             this.btnAdd.Text = "ویرایش";
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 

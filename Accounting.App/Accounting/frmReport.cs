@@ -80,5 +80,23 @@ namespace Accounting.App.Accounting
                 RtlMessageBox.Show("Please select a row");
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (dgReport.CurrentRow != null)
+            {
+                int id = int.Parse(dgReport.CurrentRow.Cells[0].Value.ToString());
+                frmNewAccounting frmNew = new frmNewAccounting();
+                frmNew.AccountID = id;
+                if(frmNew.ShowDialog() == DialogResult.OK)
+                {
+                    Filter();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Select a Row!");
+            }
+        }
     }
 }
