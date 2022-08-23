@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAdd = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
@@ -59,58 +60,39 @@
             this.btnDelete,
             this.btnRefresh,
             this.btnPrint});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(684, 62);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // btnAdd
             // 
             this.btnAdd.Image = global::Accounting.App.Properties.Resources._1371475973_document_edit;
-            this.btnAdd.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Margin = new System.Windows.Forms.Padding(7, 1, 7, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(47, 59);
-            this.btnAdd.Text = "ویرایش";
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Image = global::Accounting.App.Properties.Resources._1371476007_Close_Box_Red;
-            this.btnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.Margin = new System.Windows.Forms.Padding(0, 1, 7, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(44, 59);
-            this.btnDelete.Text = "حذف";
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRefresh
             // 
             this.btnRefresh.Image = global::Accounting.App.Properties.Resources._1371476342_Refresh;
-            this.btnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(0, 1, 7, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(64, 59);
-            this.btnRefresh.Text = "بروز رسانی";
-            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnPrint
             // 
             this.btnPrint.Image = global::Accounting.App.Properties.Resources._1371476276_Print;
-            this.btnPrint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.btnPrint, "btnPrint");
             this.btnPrint.Margin = new System.Windows.Forms.Padding(0, 1, 7, 2);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(44, 59);
-            this.btnPrint.Text = "چاپ";
-            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // groupBox1
             // 
@@ -121,75 +103,50 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cbCustomers);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 65);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(660, 75);
-            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "جست و جو ... ";
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(19, 31);
+            resources.ApplyResources(this.btnFilter, "btnFilter");
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnFilter.TabIndex = 6;
-            this.btnFilter.Text = "انجام";
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // txtToDate
             // 
-            this.txtToDate.Location = new System.Drawing.Point(113, 31);
-            this.txtToDate.Mask = "00/00/0000";
+            resources.ApplyResources(this.txtToDate, "txtToDate");
             this.txtToDate.Name = "txtToDate";
-            this.txtToDate.Size = new System.Drawing.Size(100, 21);
-            this.txtToDate.TabIndex = 5;
             this.txtToDate.ValidatingType = typeof(System.DateTime);
             // 
             // txtFromDate
             // 
-            this.txtFromDate.Location = new System.Drawing.Point(281, 31);
-            this.txtFromDate.Mask = "00/00/0000";
+            resources.ApplyResources(this.txtFromDate, "txtFromDate");
             this.txtFromDate.Name = "txtFromDate";
-            this.txtFromDate.Size = new System.Drawing.Size(100, 21);
-            this.txtFromDate.TabIndex = 4;
             this.txtFromDate.ValidatingType = typeof(System.DateTime);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(219, 34);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "تا تاریخ: ";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(387, 34);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "از تاریخ: ";
             // 
             // cbCustomers
             // 
+            this.cbCustomers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomers.FormattingEnabled = true;
-            this.cbCustomers.Location = new System.Drawing.Point(454, 31);
+            resources.ApplyResources(this.cbCustomers, "cbCustomers");
             this.cbCustomers.Name = "cbCustomers";
-            this.cbCustomers.Size = new System.Drawing.Size(121, 21);
-            this.cbCustomers.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(581, 34);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "طرف حساب : ";
             // 
             // dgReport
             // 
@@ -203,61 +160,54 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dgReport.Location = new System.Drawing.Point(12, 146);
+            resources.ApplyResources(this.dgReport, "dgReport");
             this.dgReport.Name = "dgReport";
             this.dgReport.ReadOnly = true;
-            this.dgReport.Size = new System.Drawing.Size(660, 303);
-            this.dgReport.TabIndex = 2;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "Column1";
+            resources.ApplyResources(this.Column1, "Column1");
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "CostomerID";
-            this.Column2.HeaderText = "طرف حساب";
+            resources.ApplyResources(this.Column2, "Column2");
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "Amount";
-            this.Column3.HeaderText = "مبلغ";
+            resources.ApplyResources(this.Column3, "Column3");
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "Description";
-            this.Column4.HeaderText = "بابت";
+            resources.ApplyResources(this.Column4, "Column4");
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "DateTime";
-            this.Column5.HeaderText = "تاریخ";
+            resources.ApplyResources(this.Column5, "Column5");
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
             // frmReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.dgReport);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
-            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmReport";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.frmReport_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

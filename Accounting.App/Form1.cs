@@ -31,17 +31,17 @@ namespace Accounting.App
             frmNewAccounting.ShowDialog();
         }
 
-        private void btnReportReceive_Click(object sender, EventArgs e)
-        {
-            frmReport frmReport = new frmReport();
-            frmReport.TypeID = 1;
-            frmReport.ShowDialog();
-        }
-
         private void btnReportPay_Click(object sender, EventArgs e)
         {
             frmReport frmReport = new frmReport();
             frmReport.TypeID = 2;
+            frmReport.ShowDialog();
+        }
+
+        private void btnReportReceive_Click(object sender, EventArgs e)
+        {
+            frmReport frmReport = new frmReport();
+            frmReport.TypeID = 1;
             frmReport.ShowDialog();
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Accounting.DataLayer.Context;
 using Accounting.Utilties.Convertor;
+using Accounting.ViewModel.Customers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,20 @@ namespace Accounting.App.Accounting
 
         private void frmReport_Load(object sender, EventArgs e)
         {
+            using(UnitOfwork db = new UnitOfwork())
+            {
+                List<ListCustomerViewModel> list = new List<ListCustomerViewModel>();
+                list.Add(new ListCustomerViewModel
+                {
+                    CustomerId = 0,
+                    FullName = "انتخاب کنید"
+                });
+                list.AddRange(db.CustomerRepository.GetNameCustomers());
+                cbCustomers.DataSource = list;
+                cbCustomers.DisplayMember = "FullName";
+                cbCustomers.ValueMember = "CustomerId";
+            }
+
             if (TypeID == 1)
             {
                 this.Text = "گزارش دریافتی ها";
@@ -41,8 +56,35 @@ namespace Accounting.App.Accounting
         {
             using (UnitOfwork db = new UnitOfwork())
             {
+                List<DataLayer.Accounting> result = new List<DataLayer.Accounting>();
+                DateTime? startDate;
+                DateTime? endDate;
+
+                if((int) cbCustomers.SelectedValue != 0)
+                {
+                    int customerId = int.Parse(cbCustomers.SelectedValue.ToString());
+                    result.AddRange(db.AccountingRepository.Get(a => a.TypeID == TypeID && a.CostomerID == customerId));
+                }
+                else
+                {
+                    result.AddRange(db.AccountingRepository.Get(a => a.TypeID == TypeID));
+                }
+
+                if(txtFromDate.Text != "  /  /")
+                {
+                    startDate = Convert.ToDateTime(txtFromDate.Text);
+                    startDate = DateConvertor.ToMiladi(startDate.Value);
+                    result = result.Where(r => r.DateTime >= startDate.Value).ToList();
+                }
+                if(txtToDate.Text != "  /  /")
+                {
+                    endDate = Convert.ToDateTime(txtToDate.Text);
+                    endDate = DateConvertor.ToMiladi(endDate.Value);
+                    result = result.Where(r => r.DateTime <= endDate.Value).ToList();
+                }
+
                 // dgReport.AutoGenerateColumns = false;
-                var result = db.AccountingRepository.Get(c => c.TypeID == TypeID);
+                // var result = db.AccountingRepository.Get(c => c.TypeID == TypeID);
                 // dgReport.DataSource = result;
 
                 dgReport.Rows.Clear();
