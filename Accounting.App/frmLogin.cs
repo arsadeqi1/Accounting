@@ -51,6 +51,7 @@ namespace Accounting.App
             if (isEdit)
             {
                 this.Text = "تنظیمات ورود به برنامه";
+                groupBox1.Text = "ویرایش نام کاربری و رمز عبور";
                 btnLogin.Text = "ذخیره";
                 using (UnitOfwork db = new UnitOfwork())
                 {
