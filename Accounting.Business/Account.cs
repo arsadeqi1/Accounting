@@ -15,8 +15,8 @@ namespace Accounting.Business
             ReportViewModel rp = new ReportViewModel();
             using(UnitOfwork db = new UnitOfwork())
             {
-                DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 01);
-                DateTime endDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 31);
+                var startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 01);
+                var endDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 30);
 
                 var receive = db.AccountingRepository.Get(a => a.TypeID == 1 && a.DateTime >= startDate && a.DateTime <= endDate).Select(a => a.Amount).ToList();
                 var Pay = db.AccountingRepository.Get(a => a.TypeID == 2 && a.DateTime >= startDate && a.DateTime <= endDate).Select(a => a.Amount).ToList();
